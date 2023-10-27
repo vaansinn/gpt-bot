@@ -24,7 +24,7 @@ client.on('ready',() => {
 const IGNORE_PREFIX = "!";
 const CHANNELS = ['1099940750650781736'];
 const openai = new OpenAI({
-    apiKey: process.env.OPENAI_KEY,
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 client.on('messageCreate', async (message) => {
