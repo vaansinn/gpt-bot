@@ -28,7 +28,7 @@ const openai = new OpenAI({
 })
 
 client.on('messageCreate', async (message) => {
-    console.log(message.content);
+   // console.log(message.content);
     if(message.author.bot) return;
     if(message.content.startsWith(IGNORE_PREFIX)) return;
     if(!CHANNELS.includes(message.channelId) && !message.mentions.users.has(client.user.id)) return;
