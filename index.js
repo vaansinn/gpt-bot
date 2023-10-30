@@ -74,6 +74,7 @@ client.on('messageCreate', async (message) => {
         .create({
             model: 'gpt-4',
             messages: conversation,
+            temperature: 0.8
         })
         .catch((error) => console.error('OpenAI Error:\n', error));
 
