@@ -72,7 +72,7 @@ client.on('messageCreate', async (message) => {
 
     const response = await openai.chat.completions
         .create({
-            model: 'gpt-3.5-turbo',
+            model: 'gpt-4',
             messages: conversation,
             temperature: 0.8
         })
