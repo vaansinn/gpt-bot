@@ -1,4 +1,4 @@
-require('dotenv/config');
+require('dotenv/config'); 
 const { Client } = require('discord.js');
 const { OpenAI } = require('openai');
 const express = require('express');
