@@ -22,7 +22,7 @@ client.on('ready',() => {
 })
 
 const IGNORE_PREFIX = "!";
-const CHANNELS = ['1099940750650781736','1050722276028448768'];
+const CHANNELS = ['1099940750650781736','1050722276028448768', '1245030321020469349'];
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 })
@@ -72,9 +72,11 @@ client.on('messageCreate', async (message) => {
 
     const response = await openai.chat.completions
         .create({
-            model: 'gpt-3.5-turbo',
+            model: 'GPT-4o',
             messages: conversation,
-            temperature: 1.2
+            temperature: 1.2,
+            frequency_penalty: 2,
+            presence_penalty: 2
         })
         .catch((error) => console.error('OpenAI Error:\n', error));
 
