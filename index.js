@@ -22,7 +22,7 @@ client.on('ready',() => {
 })
 
 const IGNORE_PREFIX = "!";
-const CHANNELS = ['1099940750650781736','1050722276028448768', '1245030321020469349'];
+const CHANNELS = ['1099940750650781736','1050722276028448768', '1245252103145001011'];
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 })
@@ -74,16 +74,16 @@ client.on('messageCreate', async (message) => {
         .create({
             model: 'gpt-4o',
             messages: conversation,
-            temperature: 1.2,
-            frequency_penalty: 2,
-            presence_penalty: 2
+            temperature: 1.0,
+            frequency_penalty: 1.5,
+            presence_penalty: 1.5
         })
         .catch((error) => console.error('OpenAI Error:\n', error));
 
     clearInterval(sendTypingInterval);
 
     if(!response){
-        message.reply("I'm having some trouble with th OpenAi API. Try again in a moment.");
+        message.reply("I'm having some trouble with the OpenAi API. Try again in a moment.");
         return;
     }
 
